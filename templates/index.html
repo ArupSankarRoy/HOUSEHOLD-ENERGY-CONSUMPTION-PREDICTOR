@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WINE QUALITY PREDICTOR</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #FFF;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            max-width: 500px;
+            width: 80%;
+            padding: 30px;
+            /* Remove background-color property to make it transparent */
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            transition: transform 0.2s;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #E0E0E0;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        form::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF6B6B, #1ABC9C);
+            z-index: -1;
+            transform: scale(1.2);
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2C3E50;
+            font-size: 1.1rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #F8F8F8;
+            color: #34495E;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            box-sizing: border-box;
+            border: 1px solid #E0E0E0;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"]:focus {
+            background-color: #EDEDED;
+            color: #2C3E50;
+            transform: scale(1.02);
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF8A8A;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>ENERGY CONSUMPTION PREDICTION</h1>
+    <form method="post" action="/predict">
+        <label for="Global_active_power">Global Active Power</label>
+        <input type="text" name="Global_active_power" id="Global_active_power" required>
+
+        <label for="Global_reactive_power">Global Reactive Power</label>
+        <input type="text" name="Global_reactive_power" id="Global_reactive_power" required>
+
+        <label for="Voltage">Voltage</label>
+        <input type="text" name="Voltage" id="Voltage" required>
+
+        <label for="Global_intensity">Global Intensity</label>
+        <input type="text" name="Global_intensity" id="Global_intensity" required>
+
+        <label for="Total_metering">Total Metering</label>
+        <input type="text" name="Total_metering" id="Total_metering" required>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

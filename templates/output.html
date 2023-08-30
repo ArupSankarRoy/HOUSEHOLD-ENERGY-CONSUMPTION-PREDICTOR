@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENERGY CONSUMPTION PREDICTION - output</title>
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: linear-gradient(-45deg, #34495E, #2C3E50);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #E0E0E0;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .output-container, .feedback-form {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .output-container::before, .feedback-form::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF6B6B, #1ABC9C);
+            z-index: -1;
+            transform: scale(1.2);
+        }
+
+        .result {
+            font-size: 1.8rem;
+            margin-top: 15px;
+            color: #FF6B6B;
+        }
+
+        .go-back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .go-back-button:hover {
+            background-color: #FF8A8A;
+            transform: scale(1.05);
+        }
+
+        .feedback-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2C3E50;
+        }
+
+        .feedback-form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #34495E;
+        }
+
+        .feedback-form input[type="text"], .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #F8F8F8;
+            color: #34495E;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            box-sizing: border-box;
+            border: 1px solid #E0E0E0;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-form textarea {
+            resize: vertical;
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .feedback-form input[type="submit"]:hover {
+            background-color: #FF8A8A;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <div class="output-container">
+            <h2>PREDICTION(watt/hr):</h2>
+            <p class="result">{{ prediction_result }}</p>
+            <a href="/" class="go-back-button">Go Back</a>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <div class="feedback-form">
+            <h3>Give Us Your Feedback</h3>
+            <form action="/feedback" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
