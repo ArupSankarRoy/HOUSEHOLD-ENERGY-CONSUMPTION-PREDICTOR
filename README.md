@@ -1,4 +1,4 @@
-# Energy Consumption Prediction Flask Application
+# HOUSEHOLD ENERGY CONSUMPTION PREDICTOR
 
 ![Screenshot 2023-11-14 190308](https://github.com/ArupSankarRoy/ENERGY-CONSUMPTION-PREDICTION-FLASK-APPLICATION./assets/115450599/e893a3a3-74dc-4912-9f11-9c52bf1d8c6e)
 
